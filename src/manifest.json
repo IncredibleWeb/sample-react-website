@@ -1,0 +1,29 @@
+{
+  "name": "Sample",
+  "short_name": "Sample",
+  "description": "Sample React Website",
+  "author": "Incredible Web",
+  "icons": [
+    {
+    "src": "/img/icons/96.png",
+    "sizes": "96x96",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons/144.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons/512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }
+],
+  "start_url": "./?source=manifest",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#889cac",
+  "background_color": "#fff"
+}

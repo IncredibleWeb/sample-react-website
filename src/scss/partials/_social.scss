@@ -1,0 +1,72 @@
+.social-links {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+
+  .social-links-item {
+    display: inline-block;
+    margin-right: 1.5em;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .social-links-item__link {
+    display: inline-block;
+    overflow: hidden;
+    width: 2.5em;
+    height: 2.5em;
+    vertical-align: middle;
+
+    &::before {
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      content: " ";
+      vertical-align: middle;
+    }
+
+    
+    &.facebook {
+      background: url("/img/icons/white/facebook-white.svg") no-repeat 50%;
+      background-size: cover;
+
+      @include breakpoint {
+        background: url("/img/icons/facebook.svg") no-repeat 50%;
+      }
+    }
+
+    &.instagram {
+      background: url("/img/icons/white/instagram-white.svg") no-repeat 50%;
+      background-size: cover;
+
+      @include breakpoint {
+        background: url("/img/icons/instagram.svg") no-repeat 50%;
+      }
+    }
+
+    &.twitter {
+      background: url("/img/icons/white/twitter-white.svg") no-repeat 50%;
+      background-size: cover;
+
+      @include breakpoint {
+        background: url("/img/icons/twitter.svg") no-repeat 50%;
+      }
+    }
+
+    &.linkedin {
+      background: url("/img/icons/white/linkedin-white.svg") no-repeat 50%;
+      background-size: cover;
+
+      @include breakpoint {
+        background: url("/img/icons/linkedin.svg") no-repeat 50%;
+        background-size: cover;
+      }
+    }
+  }
+
+  @include breakpoint {
+    text-align: left;
+  }
+}

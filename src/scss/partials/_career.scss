@@ -1,0 +1,70 @@
+.careers {
+  background-color: $theme-background-color;
+
+  .careers-content {
+    padding: 2em 1em;
+
+    @include breakpoint {
+      padding: 3em;
+    }
+
+    .careers-wrapper {
+      @include breakpoint {
+        @include container($max-width);
+      }
+    }
+  }
+}
+
+.career-box {
+  padding: 0.5em;
+
+  @include breakpoint {
+    padding: 1em;
+  }
+
+  .career-wrapper {
+    margin-bottom: 3em;
+
+    @include breakpoint {
+      padding: 0 2em;
+    }
+  }
+
+  .career-read-more {
+    position: absolute;
+    bottom: 1em;
+    padding-left: 0;
+
+    @include breakpoint {
+      padding-left: 2em;
+    }
+  }
+
+  .career-box-heading {
+    margin-bottom: 1em;
+    text-align: right;
+  }
+
+  .career-box-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    .career-box-item {
+      position: relative;
+      padding: 1em;
+      margin-bottom: 1.5em;
+      background-color: $theme-color-white;
+
+      @include breakpoint {
+        @include span(1 of 2 1/12);
+
+        margin-bottom: 4%;
+      
+        &:nth-child(2n) {
+          @include last;
+        }
+      }
+    }
+  }
+}

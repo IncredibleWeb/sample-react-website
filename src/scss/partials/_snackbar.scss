@@ -1,0 +1,29 @@
+.snackbar {
+  position: fixed;
+  z-index: 99;
+  right: 0; 
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: $snackbar-background-color;
+  border-radius: 0.33em;
+  box-shadow: $box-shadow-elevated;
+  color: $font-color-light;
+  font-size: 0.875em;
+  transform: translate(0, 0);
+  transition: transform 0.2s ease-in-out;
+
+  @include breakpoint {
+    right: auto;
+    bottom: 1em;
+    left: 1em;
+  }
+
+  .snackbar-text {
+    padding: 0 1em;
+  }
+
+  &.snackbar--dismissed {
+    transform: translate(0, calc(100% + 1em));
+  }
+}

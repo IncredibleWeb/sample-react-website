@@ -1,0 +1,85 @@
+.products-container {
+  .products-list {
+    .products-list-item {
+      position: relative;
+      padding: 0;
+      margin-bottom: 2em;
+      background-color: $header-background-color;
+
+      .products-item-bottom-link {
+        position: absolute;
+        right: 0;
+        bottom: 1em;
+        left: 0;
+        width: 1em;
+        height: 1em;
+        margin: auto;
+        background: url("/img/icons/ic_right-arrow.svg") no-repeat 50%;
+        background-size: cover;
+        cursor: pointer;
+        transform: translateY(-25%) rotate(90deg);
+        transform-origin: center;
+        vertical-align: middle;
+      }
+
+      .products-wrapper {
+        height: 12em;
+        padding: 2em;
+        
+        .read-more {
+          position: absolute;
+          bottom: 0;
+          padding: 1em 0;
+          color: $font-color-light;
+
+          @include breakpoint {
+            &:hover {
+              color: $theme-color-white;
+            }
+          }
+        }
+      }
+    }
+
+    .products-item-title {
+      color: $theme-color-white;
+      font-size: 1.5em;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      @include breakpoint {
+        &:hover {
+          color: darken($theme-color-white, 15%);
+        }
+      }
+    }
+
+    .products-item-summary {
+      color: $theme-color-primary-dark;
+      text-align: left;
+    }
+  }
+
+  .products-button {
+    margin-bottom: 3em;
+    text-align: center;
+  }
+}
+
+.products-detail {
+  @include container($max-width);
+
+  ul {
+    line-height: 2.5;
+    list-style: initial;
+
+    @include breakpoint {
+      margin: 1em;
+    }
+  }
+
+  li {
+    padding-left: 1em;
+    color: $font-title-color;
+  }
+}

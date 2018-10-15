@@ -1,0 +1,149 @@
+footer {
+  z-index: 6;
+  background-color: $header-background-color;
+  color: $theme-color-white;
+  line-height: 1;
+  text-align: center;
+
+  @include breakpoint {
+    background-color: $theme-color-white;
+    color: $footer-color;
+    text-align: left;
+  }
+
+  .footer-wrapper {
+    @include container($max-width);
+
+    padding: 2em 0;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @include breakpoint {
+      padding: 0 1em;
+      margin-top: 2em;
+      margin-bottom: 3em;
+    }
+
+    .quick-links,
+    .social-links {
+      @include container;
+
+      padding: 0;
+      margin: 0;
+      font-size: 0.875em;
+      line-height: 2;
+      text-align: center;
+
+      @include breakpoint {
+        line-height: 2.5;
+        text-align: left;
+      }
+    }
+
+    .social-links {
+      margin-top: 2em;
+      margin-bottom: 2em;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+
+      .footer-summary {
+        @include span(1 of 1);
+
+        margin-top: 1em;
+
+        @include breakpoint {
+          @include span(2 of 10 1/10);
+        }
+
+        .logo {
+          width: 100%;
+          max-width: 20em;
+        }
+
+        .text {
+          padding: 0 1em;
+          line-height: 1.5em;
+        }
+      }
+
+      .quick-links {
+        @include span(1 of 1);
+
+        @include breakpoint {
+          @include container;
+          @include span(7 of 10 last);
+        }
+
+        .quick-link {
+          @include span(1 of 1 last);
+
+          padding: 1em 0;
+          border-bottom: 1px solid $footer-color;
+          margin-bottom: 0;
+
+          @include breakpoint {
+            @include span(1 of 4 1/12);
+
+            padding-bottom: 0.5em;
+            border-bottom: 0;
+          }
+
+          &:nth-child(4n) {
+            @include last;
+          }
+
+          .quick-link-links {
+            padding: 0;
+            margin: 0;
+            color: $theme-color-white;
+
+            @include breakpoint {
+              color: $font-title-color;
+            }
+
+            .ellipsis {
+              color: $footer-color;
+            }
+
+            .link {
+              color: $theme-color-white;
+
+              @include breakpoint {
+                color: $footer-color;
+              }
+            }
+
+            h3 {
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    }
+
+    .credits {
+      margin-top: 3em;
+      color: $theme-color-white;
+      font-size: 0.875em;
+      text-align: center;
+
+      a,
+      a:visited {
+        color: $theme-color-white;
+
+        @include breakpoint {
+          color: $footer-color;
+        }
+      }
+
+      @include breakpoint {
+        margin-top: 0;
+        color: $footer-color;
+        text-align: right;
+      }
+    }
+  }
+}

@@ -1,0 +1,215 @@
+.home {
+  margin-right: auto;
+  margin-left: auto;
+
+  .home-section {
+    padding: 1em;
+    background-color: $theme-background-color;
+
+    .home-content {
+      @include container($max-width);
+      
+      padding: 1em 0;
+
+      @include breakpoint {
+        position: relative;
+        z-index: 1;
+        padding: 1em;
+      }
+    
+      .home-title {
+        color: $font-title-color;
+        text-transform: uppercase;
+      }
+
+      .home-row {
+        @include container($max-width);
+        
+        @include breakpoint {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 0;
+          margin: 1em auto;
+        }
+
+        .home-richtext {
+          color: $font-paragraph-color;
+          line-height: $line-height;
+        }
+
+        .home-thumbnail {
+          position: relative;
+          width: 100%;
+
+          @include breakpoint {
+            padding-left: 3em;
+            margin: 1em 0;
+          }
+
+          img {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  
+  .secondary-banner {
+    display: none;
+  
+    @include breakpoint {
+      display: block;
+    }
+  }
+  
+  .home-news-section {
+    position: relative;
+
+    @include breakpoint {
+      padding: 3em;
+    }
+    
+    .background-image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: none;
+      overflow: hidden;
+      background-color: $header-background-color;
+  
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        opacity: 0.2;
+        transform: translate(-50%, -50%);
+      }
+  
+      @include breakpoint {
+        display: block;
+      }
+    }
+    
+    @include breakpoint {
+      .content {
+        @include container($max-width);
+  
+        display: flex;
+  
+        .item {
+          @include span(1 of 3 1/12);
+  
+          padding: 1em 2em;
+          margin-bottom: 0;
+  
+          &:nth-child(3n) {
+            @include last;
+          }
+        }
+      }
+    }
+  }
+  
+  .home-our-office {
+    padding: 0 1em 2em;
+    background-color: $theme-background-color;
+  
+    .our-office-section {
+      @include breakpoint {
+        @include container($max-width);
+  
+        padding: 2em 0;
+      }
+    }
+  }
+  
+  .contact-section {
+    padding: 1em;
+    background-color: $theme-color-white;
+  
+    @include breakpoint {
+      padding: 3em 0 2em;
+    }
+    
+    .contact-section-row {
+      margin: 0 1em;
+
+      @include breakpoint {
+        @include container ($max-width);
+
+        padding: 0 1em 0.5em;
+      }
+    }
+
+    .description-row {
+      @include breakpoint {
+        @include container ($max-width);
+
+        padding-bottom: 0.5em;
+        margin-top: 0.83em;
+      }
+    }
+
+    .description-row,
+    .contact-section-row {
+      &::after {
+        @include breakpoint {
+          display: table;
+          clear: both;
+          content: "";
+        }
+      }
+    }
+    
+    .contact-section-title {
+      padding-top: 0;
+      color: $font-title-color;
+      text-transform: uppercase;
+    }
+  
+    .item-title {
+      color: $font-title-color;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  
+    .item-text {
+      margin-bottom: 1em;
+      color: $font-paragraph-color;
+
+      @include breakpoint {
+        margin-bottom: 0;
+      }
+    }
+  
+    .contact-section-card {
+      @include container ($max-width);
+  
+      padding-top: 0;
+      margin-bottom: 1em;
+      box-shadow: $box-shadow-elevated;
+  
+      @include breakpoint {
+        margin-bottom: 4em;
+      }
+    }
+  }
+
+  hr {
+    display: none;
+
+    @include breakpoint {
+      @include container($max-width);
+
+      display: block;
+      height: 12px;
+      border: 0;
+      box-shadow: $long-line-shadow;
+    }
+  }
+}

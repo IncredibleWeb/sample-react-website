@@ -1,0 +1,7 @@
+{
+    "watch": [
+        "app.js",
+        "dist/inline.css"
+    ],
+    "ext": "js css"
+}

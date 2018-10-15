@@ -1,0 +1,443 @@
+.nav-menu {
+  position: relative;
+  z-index: 6;
+  display: block;
+
+  .side-nav {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 16em;
+    background-color: $header-background-color;
+    box-shadow: $box-shadow;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transform: translate3d(-102%, 0, 0);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+    will-change: transform;
+
+    &.touching {
+      transition: none;
+    }
+
+    &.always-open-on-desktop {
+      @include breakpoint {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    @include breakpoint {
+      &::after {
+        display: block;
+        height: $header-height;
+        content: "";
+      }
+    }
+  }
+
+  .nav-header {
+    position: relative;
+    overflow: hidden;
+    height: 7em;
+    background-color: $theme-color-primary;
+
+    .logo {
+      width: 100%;
+      height: 100%;
+
+      img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 80%;
+        height: auto;
+        margin: auto;
+      }
+    }
+
+    @include breakpoint {
+      height: $header-height;
+      background: transparent;
+      box-shadow: none;
+    }
+  }
+
+  .nav-body {
+    font-size: 0.875em;
+    transform: translateZ(0);
+
+    .section {
+      border-bottom: $border-darken;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    .section-header {
+      display: block;
+      padding: 1em 0 1em 1.5em;
+      font-weight: 700;
+    }
+
+    .inner-section {
+      a {
+        padding: 1em 0 1em 2.5em;
+      }
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      li {
+        padding: 0;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 1em 0 1em 1.5em;
+      border-left: 2px solid transparent;
+      margin-top: 0;
+      color: darken($font-color-light, 10%);
+      text-decoration: none;
+
+      &:visited {
+        color: darken($font-color-light, 10%);
+      }
+
+      &:hover,
+      &:active {
+        background-color: lighten($theme-color-black, 40%);
+      }
+
+      &.selected {
+        background-color: lighten($theme-color-black, 40%);
+        pointer-events: none;
+      }
+    }
+
+    .two-tier-item {
+      a {
+        border-left: 2em solid transparent;
+      }
+    }
+  }
+
+  .icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 1em;
+    line-height: 1;
+    vertical-align: middle;
+
+    &.two-tier-icon {
+      display: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.hamburger {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  label {
+    display: inline-block;
+    overflow: hidden;
+    width: 24px;
+    height: $header-height;
+    border: 0;
+    margin-left: 1em;
+    background: url("/img/ic_menu_white_24px.svg") center center no-repeat;
+    cursor: pointer;
+    outline: 0;
+    text-indent: -9999px;
+
+    @include breakpoint {
+      display: none;
+    }
+  }
+
+  input {
+    display: none;
+
+    &:checked {
+      ~ .side-nav {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+.nav-desktop {
+  position: relative;
+  z-index: 2;
+  display: none;
+  max-width: $max-width;
+  margin: 4.5em auto 0;
+  transition: transform 0.05s linear;
+
+  .logo-desktop {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    right: 1.5em;
+    bottom: 0;
+    display: block;
+    max-width: 14em;
+    height: 100%;
+    margin: auto;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    &.home-page-logo {
+      opacity: 0;
+      
+      &.fade-in-logo {
+        opacity: 1;
+        transition: opacity 0.3s ease-in;
+        transition-delay: 0.1s;
+      }
+
+      &.fade-out-logo {
+        opacity: 0;
+        transition: opacity 0.2s ease-out;
+        transition-delay: 0.2s;
+      }
+
+      &.hide-logo {
+        opacity: 0;
+      }
+    }
+  }
+
+  .nav-links {
+    @include container;
+
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    .page-list {
+      position: relative;
+      width: 100%;
+      padding: 0;
+      line-height: 1.5;
+      text-align: left;
+      vertical-align: middle;
+
+      .item {
+        display: inline-block;
+        margin: 0 1em;
+        color: $font-color-light;
+        cursor: pointer;
+        text-align: center;
+        text-transform: uppercase;
+        vertical-align: middle;
+
+        a,
+        a:visited {
+          padding: 0.125em 0.25em;
+          color: $font-color-light;
+
+          &:hover,
+          &:active {
+            color: $theme-color-white;
+          }
+
+          &.selected {
+            color: $theme-color-white;
+          }
+        }
+
+        &.two-tier {
+          .two-tier-icon {
+            display: inline-block;
+            width: 1.5em;
+            height: 0.8em;
+            transform: translateY(-25%) rotate(90deg);
+            vertical-align: middle;
+
+            img {
+              display: block;
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          a {
+            .selected .icon {
+              img {
+                display: inline-block;
+                width: 0.8em;
+                height: 0.8em;
+                margin-left: 0.2em;
+                transform: translateY(-25%) rotate(90deg);
+                vertical-align: middle;
+              }
+            }
+          }
+
+          @include breakpoint {
+            .two-tier-content {
+              a,
+              a:visited {
+                color: $font-paragraph-color-light;
+                font-weight: bold;
+       
+                &:hover,
+                &:active {
+                  color: $font-paragraph-color;
+                }
+       
+                &.selected {
+                  color: $font-paragraph-color;
+                }
+              }
+            }
+
+            &:hover {
+              .two-tier-content {
+                display: block;
+                overflow: visible;
+                height: auto;
+              }
+            }
+          }
+
+          ul {
+            margin-top: 0.5em;
+          }
+        }
+
+        @include breakpoint {
+          position: relative;
+          margin: 0 1em;
+          color: $theme-color-secondary;
+        }
+      }
+    }
+  }
+
+  @include breakpoint {
+    display: block;
+    will-change: transform;
+  }
+}
+
+.two-tier-content {
+  display: none;
+  height: auto;
+
+  ul {
+    padding: 0.5em;
+  }
+
+  a {
+    display: block;
+    padding: 0.5em;
+    text-align: left;
+
+    @include breakpoint {
+      text-transform: uppercase;
+    }
+  }
+
+  @include breakpoint {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    overflow: hidden;
+    min-width: 12em;
+    padding: 0.5em;
+    margin-left: 0;
+    background-color: transparent;
+    cursor: initial;
+
+    ul {
+      padding: 1em;
+      background-color: $theme-color-white;
+      box-shadow: $box-shadow;
+      
+      &::before {
+        position: absolute;
+        z-index: 1;
+        top: 1em;
+        right: 1.5em;
+        bottom: 100%;
+        width: 0;
+        height: 0;
+        border: solid transparent;
+        margin: auto;
+        border-bottom-color: $theme-color-white;
+        border-width: 0.5em;
+        content: " ";
+      }
+    }
+
+    li {
+      padding-top: 0.5em;
+    }
+  }
+}
+
+.two-tier-mobile {
+  position: absolute;
+  right: 0;
+  width: 5em;
+  height: 3.7em;
+
+  &::before {
+    width: 0.8em;
+    height: 0.8em;
+    margin-top: 1.5em;
+    margin-right: 1.5em;
+    background: url("/img/icons/ic_arrow.svg") no-repeat 50%;
+    background-size: cover;
+    content: " ";
+    float: right;
+    transform: translateY(-25%) rotate(90deg);
+    vertical-align: middle;
+
+    @include breakpoint {
+      display: none;
+    }
+  }
+
+  @include breakpoint {
+    display: none;
+  }
+}
+
+.two-tier-item {
+  .two-tier-content {
+    display: block;
+    font-size: 0.9em;
+
+    @include breakpoint {
+      display: none;
+    }
+  }
+}

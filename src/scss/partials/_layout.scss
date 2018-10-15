@@ -1,0 +1,41 @@
+.main {
+  min-height: 24em;
+
+  &.main--enter {
+    opacity: 0.0001;
+  }
+
+  &.main--enter.main--enter-active {
+    opacity: 1;
+    transition: opacity 100ms ease-in;
+  }
+
+  &.main--exit {
+    opacity: 0.0001;
+  }
+
+  &.main--error {
+    overflow: hidden;
+    height: 0;
+    min-height: auto;
+    opacity: 0.0001;
+  }
+}
+
+.banner--enter {
+  opacity: 0.0001;
+}
+
+.banner--enter.banner--enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+
+.banner--exit {
+  opacity: 1;
+}
+
+.banner--exit.banner--exit-active {
+  opacity: 0.0001;
+  transition: opacity 150ms ease-in;
+}

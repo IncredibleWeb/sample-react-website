@@ -1,0 +1,61 @@
+// Credits to Kyle Lavery: https://codepen.io/koenigsegg1/pen/QjZNVP
+$toggle-color-checked: #3f51b5;
+$toggle-color-disabled: #c6c6c6;
+$switch-color-checked: #9ca5d7;
+$toggle-color: #fff;
+$switch-color: #939393;
+$width: 32px;
+$height: $width / 2.5;
+
+.toggle-description {
+  padding-right: 3em;
+}
+
+.toggle-input {
+  input[type="checkbox"] {
+    display: none;
+
+    &:checked {
+      ~ .toggle {
+        left: ($width - ($height * 1.4 - $height) / 2) - $height;
+        background: $toggle-color-checked;
+        transition: 0.3s;
+      }
+
+      ~ .switch {
+        background: $switch-color-checked;
+        transition: 0.3s;
+      }
+    }
+
+    &:disabled,
+    &.disabled {
+      ~ .toggle {
+        background: $toggle-color-disabled;
+      }
+    }
+  }
+
+  .switch {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: $width;
+    height: $height;
+    background: $switch-color;
+    border-radius: $height / 2;
+    transition: 0.3s;
+  }
+
+  .toggle {
+    position: absolute;
+    top: ($height * 1.4 - $height) / -2;
+    left: ($height * 1.4 - $height) / -2;
+    width: $height * 1.4;
+    height: $height * 1.4;
+    background: $toggle-color;
+    border-radius: 50%;
+    box-shadow: 0 $width / 50 $width / 25 rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+  }
+}

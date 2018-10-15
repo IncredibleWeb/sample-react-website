@@ -1,0 +1,139 @@
+.slick-prev,
+.slick-next {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  display: block;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  margin: auto;
+  background: transparent;
+  color: $theme-color-tertiary;
+  cursor: pointer;
+  font-size: 0;
+  line-height: 0;
+  outline: none;
+  transform: translate(0, -50%);
+}
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  opacity: 1;
+  outline: none;
+}
+
+.slick-prev.slick-disabled,
+.slick-next.slick-disabled {
+  opacity: 0.3;
+}
+
+.slick-prev {
+  left: 0;
+  background: url("/img/icons/left.svg") 50% 50% no-repeat;
+  background-size: 100%;
+}
+
+[dir="rtl"] .slick-prev {
+  right: 0;
+  left: auto;
+  background: url("/img/icons/right.svg") 50% 50% no-repeat;
+  background-size: 100%;
+}
+
+.slick-next {
+  right: 0;
+  background: url("/img/icons/right.svg") 50% 50% no-repeat;
+  background-size: 100%;
+}
+
+[dir="rtl"] .slick-next {
+  right: auto;
+  left: 0;
+  background: url("/img/icons/left.svg") 50% 50% no-repeat;
+  background-size: 100%;
+}
+
+.slick-slider {
+  margin-bottom: 2em;
+}
+
+.slick-slide {
+  outline: none;
+}
+
+.slick-dots {
+  position: absolute;
+  top: 100%;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0;
+  list-style: none;
+  text-align: center;
+  white-space: nowrap;
+
+  li {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin-right: 0.5em;
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    button {
+      display: block;
+      width: 20px;
+      height: 20px;
+      padding: 5px;
+      border: 0;
+      background: transparent;
+      color: transparent;
+      cursor: pointer;
+      font-size: 0;
+      line-height: 0;
+      outline: none;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        background-color: lighten($theme-color-secondary, 33%);
+        border-radius: 50%;
+        color: $theme-color-black;
+        content: "";
+        font-size: 6px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 16px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+  outline: none;
+}
+
+.slick-dots li button:hover::before,
+.slick-dots li button:focus::before {
+  background-color: $theme-color-secondary;
+}
+
+.slick-dots li.slick-active button::before {
+  background-color: $theme-color-secondary;
+}

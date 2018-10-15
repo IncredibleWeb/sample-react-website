@@ -1,0 +1,61 @@
+$banner-height: 28em;
+
+.main-banner {
+  position: relative;
+  overflow: hidden;
+  min-height: $banner-height;
+  background-color: $header-background-color;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.3;
+    transform: translate(-50%, -50%);
+  }
+
+  &.main-banner--empty {
+    min-height: $header-height;
+
+    @include breakpoint {
+      display: block;
+      min-height: $header-height-desktop;
+    }
+  }
+}
+
+.banner {
+  position: relative;
+  overflow: hidden;
+  height: $banner-height;
+  
+  &.banner--enter {
+    opacity: 0.0001;
+  }
+
+  &.banner--enter.banner--enter-active {
+    opacity: 1;
+    transition: opacity 100ms ease-in;
+  }
+
+  &.banner--exit {
+    opacity: 1;
+  }
+
+  &.banner--exit.banner--exit-active {
+    opacity: 0.0001;
+    transition: opacity 50ms ease-in;
+  }
+}
+
+.home-banner {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+
+  @include breakpoint {
+    height: 100vh;
+  }
+}

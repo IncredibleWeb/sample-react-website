@@ -1,0 +1,103 @@
+html {
+  position: relative;
+  background-color: $background-color;
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
+body,
+select,
+input,
+textarea {
+  color: $font-color;
+  font-family: $font-family;
+  font-size: $font-size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: $font-paragraph-color-light;
+  text-decoration: none;
+
+  &:visited {
+    color: $font-paragraph-color-light;
+  }
+
+  &:hover,
+  &:active {
+    color: lighten($font-paragraph-color-light, 10%);
+  }
+
+  &.disabled {
+    color: $disabled-color;
+    pointer-events: none;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2 {
+  font-family: $secondary-font-family;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.125;
+}
+
+header {
+  position: fixed;
+  z-index: 3;
+  top: -1 * $header-height;
+  right: 0;
+  left: 0;
+  height: 7em;
+  backface-visibility: hidden;
+  background-color: transparent;
+  transform: translateZ(0);
+
+  @include breakpoint {
+    z-index: 9;
+  }
+}
+
+strong {
+  font-weight: 700;
+}
+
+.header-background {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2 * $header-height;
+  background-color: $header-background-color;
+  box-shadow: $box-shadow-bottom;
+}
+
+.content {
+  position: relative;
+  padding: 1em;
+}
+
+.offline {
+  filter: grayscale(1);
+}
+
+.hidden {
+  visibility: hidden;
+}

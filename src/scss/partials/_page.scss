@@ -1,0 +1,166 @@
+.page-content {
+  padding: 2em 1em;
+  background-color: $theme-background-color;
+
+  @include breakpoint {
+    padding: 3em;
+  }
+}
+
+.page-content-wrapper {
+  @include breakpoint {
+    @include container($max-width);
+  }
+}
+
+.page-content-thumb {
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  @include breakpoint {
+    padding: 3em 2em 1em 0;
+    float:left;
+  }
+}
+
+.page-content-text {
+  padding: 1em;
+  background-color: $theme-color-white;
+
+  @include breakpoint {
+    padding: 2em;
+    margin-left: 1em;
+    line-height: 1.75em;
+  }
+
+  p::first-letter {
+    color: $theme-color-black;
+    font-size: 3em;
+    font-weight: bold;
+    vertical-align: text-bottom;
+  }
+
+  .page-title {
+    text-align: center;
+  }
+
+  .page-content-header {
+    font-weight: bold;
+    text-align: right;
+  }
+
+  .breadcrumb {
+    float: left;
+  }
+}
+
+.three-column {
+  @include breakpoint {
+    @include span(1 of 3 1/12);
+  
+    &:nth-child(3n) {
+      @include last;
+    }
+  }
+}
+
+.two-column {
+  @include breakpoint {
+    @include span(1 of 2 1/6);
+  
+    &:nth-child(2n) {
+      @include last;
+    }
+  }
+}
+
+.server-error {
+  padding: 5em;
+}
+
+.detail-page-heading {
+  padding: 0 0 1em;
+  text-transform: uppercase;
+
+  @include breakpoint {
+    padding: 0 0 2em;
+  }
+}
+
+.detail-page-heading-link {
+  font-weight: bold;
+
+  &::before {
+    display: inline-block;
+    width: 1.5em;
+    height: 1em;
+    margin-right: 1em;
+    margin-left: 1em;
+    background: url("/img/icons/ic_right-arrow.svg") no-repeat 50%;
+    background-size: cover;
+    content: " ";
+    transform: rotate(180deg);
+    vertical-align: middle;
+    vertical-align: text-top;
+  }
+
+  @include breakpoint {
+    margin: 1em;
+  }
+}
+
+.page-section-container {
+  padding: 1em;
+  background-color: $theme-background-color;
+
+  @include breakpoint {
+    padding: 2em;
+  }
+
+  .section-heading {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .section-list {
+    @include container($max-width);
+    
+    padding-top: 1em;
+
+    @include breakpoint {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 2em;
+    }
+  }
+}
+
+.read-more {
+  display: flex;
+  padding: 1em 0;
+
+  @include breakpoint {
+    position: absolute;
+    bottom: 0;
+    padding: 2em 0;
+    margin: auto;
+  }
+}
+
+.read-more-link {
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &::after {
+    display: inline-block;
+    width: 1.5em;
+    height: 1em;
+    margin-left: 1em;
+    background: url("/img/icons/ic_right-arrow.svg") no-repeat 50%;
+    background-size: cover;
+    content: " ";
+    vertical-align: text-top;
+  }
+}

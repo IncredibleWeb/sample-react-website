@@ -1,0 +1,81 @@
+@import "~susy/sass/susy";
+$base-font-family: unquote("sans-serif");
+$background-color: #fff;
+$font-family: "Roboto", sans-serif;
+$secondary-font-family: "GoogleSans", $font-family;
+$button-color: #889cac;
+$button-color-dark: #768c9d;
+$banner-logo-background-color: rgba(85, 105, 121, 0.5);
+$theme-color-primary: darken($button-color, 20%);
+$theme-color-primary-light: lighten($theme-color-primary, 10%);
+$theme-color-primary-dark: darken($theme-color-primary, 10%);
+$theme-color-secondary: #768c9d;
+$theme-color-secondary-light: lighten($theme-color-secondary, 10%);
+$theme-color-secondary-dark: darken($theme-color-secondary, 10%);
+$theme-color-tertiary: $theme-color-secondary;
+$theme-color-tertiary-light: $theme-color-secondary-light;
+$theme-color-tertiary-dark: $theme-color-secondary-dark;
+$theme-background-color: #f0f5fa;
+$theme-color-white: #fff;
+$theme-color-black: #000;
+$theme-color-gray: #3c3c3c;
+$error-color: #b71c11;
+$banner-error-background-color: #b71c11c7;
+$button-hover-color: $theme-color-primary-light;
+$offline-background-color: #333;
+$darken-color: rgba(0, 0, 0, 0.33);
+$darken-color-light: rgba(0, 0, 0, 0.1);
+$lighten-color: rgba(255, 255, 255, 0.33);
+$disabled-background-color: #ccc;
+$input-disabled-background-color: #ccc;
+$header-background-color: #0d212e;
+$snackbar-background-color: #333;
+$two-tier-nav-background-color: rgba(13, 33, 46, 0.8);
+$disabled-color: #666;
+$line-height: 1.85em;
+$font-size: 16px;
+$font-color: rgba(0, 0, 0, 0.9);
+$font-title-color: #0d212e;
+$font-paragraph-color: #333;
+$font-paragraph-color-light: #6e7a82;
+$footer-color: $font-paragraph-color;
+$font-color-light: rgba(255, 255, 255, 0.8);
+$font-weight: 300;
+$max-width: 78em;
+$box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+$box-shadow-elevated: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+$box-shadow-dialog: 0 19px 38px rgba(0, 0, 0, 0.3),
+  0 15px 12px rgba(0, 0, 0, 0.22);
+$box-shadow-bottom: 0 2px 5px rgba(0, 0, 0, 0.26);
+$box-shadow-top: 0 -2px 5px rgba(0, 0, 0, 0.26);
+$input-background-color: $theme-color-tertiary;
+$border-radius: 6px;
+$input-border-radius: 0;
+$border-darken: 1px solid rgba(0, 0, 0, 0.33);
+$border-lighten: 1px solid rgba(0, 0, 0, 0.05);
+$overlay-background-color: rgba(0, 0, 0, 0.5);
+$header-height: 3.5em;
+$header-height-desktop: 6em;
+$line-shadow: inset 0 3px 0 0 $font-paragraph-color;
+$long-line-shadow: inset 1px 11px 5px -12px $darken-color;
+$label-color: #a9a9a9;
+
+@mixin breakpoint($point: desktop) {
+  @if $point == desktop-xxl {
+    @media only screen and (min-width: 90em) {
+      @content;
+    }
+  }
+  
+  @else if $point == desktop-l {
+    @media only screen and (min-width: 78em) {
+      @content;
+    }
+  }
+
+  @else {
+    @media only screen and (min-width: 54em) {
+      @content;
+    }
+  }
+}

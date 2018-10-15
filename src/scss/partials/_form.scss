@@ -1,0 +1,118 @@
+.form {
+  @include container;
+
+  .form-field {
+    position: relative;
+    padding: 0.5em;
+
+    label {
+      display: block;
+      margin: 0.5em;
+    }
+
+    .helper-text {
+      border-top: 1px solid $theme-color-primary;
+      margin-top: 2em;
+      margin-bottom: 2em;
+      color: $theme-color-primary;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="phone"],
+    input[type="password"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="time"],
+    input[type="tel"],
+    textarea,
+    select {
+      display: inline-block;
+      width: 100%;
+      padding: 0.5em;
+      border: 1px solid $darken-color;
+      border-radius: $input-border-radius;
+
+      &[disabled],
+      &[readonly] {
+        background-color: $input-disabled-background-color;
+        color: $disabled-color;
+      }
+    }
+
+    textarea {
+      display: block;
+      resize: none;
+    }
+
+    select {
+      height: 2.5625em;
+      -webkit-appearance: none;
+      background-color: transparent;
+    }
+
+    &.inline {
+      input {
+        display: inline-block;
+      }
+
+      label {
+        display: inline-block;
+      }
+    }
+
+    @include breakpoint {
+      @include span(1 of 2 0);
+
+      &.single {
+        @include span(1 of 1 last);
+      }
+    }
+  }
+
+  .buttons {
+    text-align: center;
+
+    .button {
+      width: 100%;
+      margin: 1em 0;
+
+      @include breakpoint {
+        max-width: 12em;
+        margin-right: 1em;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    @include breakpoint {
+      text-align: left;
+    }
+  }
+}
+
+.no-js {
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="phone"],
+  input[type="password"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="time"],
+  input[type="tel"],
+  textarea,
+  select {
+    ~ label {
+      color: $theme-color-primary-dark;
+      transform: translate3d(-0.5em, -2em, 0) scale(0.875);
+    }
+  }
+}
+
+.honeypot {
+  display: none;
+}

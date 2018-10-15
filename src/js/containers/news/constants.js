@@ -1,0 +1,12 @@
+export const SET_NEWS = "news/SET_NEWS";
+export const SET_CATEGORY_NEWS = "news/SET_CATEGORY_NEWS";
+export const SET_NEWS_SECTION = "news/SET_NEWS_SECTION";
+export const SET_ERROR = "news/SET_ERROR";
+export const SET_LOADING = "news/SET_LOADING";
+export const SET_PAGINATION = "news/SET_PAGINATION";
+export const SET_MORE_NEWS = "news/SET_MORE_NEWS";
+export const SET_MORE_CATEGORY_NEWS = "news/SET_MORE_CATEGORY_NEWS";
+export const REDUCER_NAME = "news";
+export const PAGE_NUMBER_QUERY_STRING_PARAM = "page";
+export const PAGE_SIZE_QUERY_STRING_PARAM = "pageSize";
+export const PAGE_SIZE_VALUE = 6;
